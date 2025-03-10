@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "useraccess"
+version = "0.1.0"
+description = "user authentication JWT token using CockroachDB and SQLAlchemy as ORM."
+authors = ["jay <jaypatil1218@gmail.com>"]
+readme = "README.md"
+packages = [{include = "app"}]
+
+[tool.poetry.dependencies]
+python = ">=3.11"
+fastapi = "0.115.7"
+SQLAlchemy = "2.0.37"
+pydantic-settings = "2.7.1"
+python-dotenv = "1.0.1"
+psycopg2-binary = "2.9.10"
+sqlalchemy-cockroachdb = "2.0.2"
+uvicorn = "0.34.0"
+httpx = "^0.28.1"
+passlib = "^1.7.4"
+bcrypt = "^4.2.1"
+pyjwt = "^2.10.1"
+
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
