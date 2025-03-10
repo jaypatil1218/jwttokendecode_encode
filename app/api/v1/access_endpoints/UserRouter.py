@@ -45,20 +45,20 @@ def login(token: TokenDecode, userService: UserService = Depends()):
  
 
     # Extract user details (optional, if needed for authentication)
-    # access_data = AccessSchema(
-    #     signupid=data.get("signupid"),
-    #     employeecode=data.get("employeecode"),
-    #     subscriptionname=data.get("subscriptionname"),
-    #     email=data.get("email"),
-    #     employeeid=data.get("employeeid"),
-    # )
+    access_data = AccessSchema(
+        signupid=data.get("signupid"),
+        employeecode=data.get("employeecode"),
+        subscriptionname=data.get("subscriptionname"),
+        email=data.get("email"),
+        employeeid=data.get("employeeid"),
+    )
 
-    # userschema = userService.authenticate_user(accessSchema=access_data)
-    # if userschema is None:
-    #     raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid credentials")
+    userschema = userService.authenticate_user(accessSchema=access_data)
+    if userschema is None:
+        raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid credentials")
 
-    # payload= userschema.model_dump()
-    # token=create_token(payload)
+    payload= userschema.model_dump()
+    token=create_token(payload)
     return {"Travel Module Access Token":token}
 
 
