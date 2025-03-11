@@ -12,10 +12,11 @@ class UserRequestSchema(BaseModel):
     name:str
     photo:str
     employeeid:int
+    role:str
 
 
 class UserSchema(UserRequestSchema):
-    id: uuid.UUID
+    id: int
 
 class TokenDecode(BaseModel):
     token: str

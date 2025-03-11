@@ -18,3 +18,4 @@ class User(BaseModel):
     name = Column(String, nullable=False)
     photo = Column(String, nullable=False)
     employeeid = Column(Integer, nullable=False)
+    role = Column(String, nullable=False)

@@ -18,6 +18,6 @@ app = FastAPI(
 # Add Routers
 
 app.include_router(UserRouter)
+
+
 init()
-
-

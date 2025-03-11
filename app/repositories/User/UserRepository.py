@@ -10,7 +10,7 @@ from app.repositories.BaseRepository import (
 )
 
 
-class UserRepository(BaseRepository[User, uuid.UUID]):  
+class UserRepository(BaseRepository[User, int]):  
     def __init__(self, db: Session = Depends(get_db_connection)):
         super().__init__(db, User)
         

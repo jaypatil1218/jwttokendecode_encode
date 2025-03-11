@@ -21,10 +21,10 @@ class UserService:
         )
         return self.userRepository.create(instance=user_instance)
 
-    def delete(self, user_id: uuid.UUID) -> None:
+    def delete(self, user_id: int) -> None:
         return self.userRepository.delete(user_id)
 
-    def get(self, user_id: uuid.UUID) -> User:
+    def get(self, user_id: int) -> User:
         return self.userRepository.get(user_id)
 
     def list(
@@ -35,7 +35,7 @@ class UserService:
     ) -> List[User]:
         return self.userRepository.list( pageSize, startIndex)
 
-    def update(self, user_id: uuid.UUID, emp_body: UserRequestSchema) -> User:
+    def update(self, user_id: int, emp_body: UserRequestSchema) -> User:
         return self.userRepository.update(user_id, emp_body)
     
     def authenticate_user(self, accessSchema:AccessSchema) -> UserRequestSchema:
